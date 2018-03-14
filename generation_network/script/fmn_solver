@@ -1,0 +1,21 @@
+train_net: "./script/fmn_train_1"
+test_net: "./script/fmn_test_1"
+test_iter: 40
+test_interval: 1000
+base_lr: 0.000003
+momentum: 0.9
+#weight_decay: 0.005
+weight_decay: 0.0003
+lr_policy: "step"
+gamma: 0.1
+stepsize: 80000
+# Display every 20 iterations
+display: 100
+# The maximum number of iterations
+max_iter: 160000
+# snapshot intermediate results
+snapshot: 1000
+snapshot_prefix: "./model/ucf101"
+# solver mode: CPU or GPU
+solver_mode: GPU
+device_id: 0

@@ -1,0 +1,1 @@
+GLOG_logtostderr=1 ./tools/C3D-v1.1/build/tools/extract_image_features.bin ./script/fmn_feature_extraction/c3d_resnet18_ucf101_feature_extraction.prototxt ./model/train01_hmdb_r0_raw_dy_s_iter_4000.caffemodel 0 30 226 ./sig_data_hmdb/list/output_prefix_1_s pool5

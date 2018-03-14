@@ -1,0 +1,70 @@
+name: "deep_c3d_ucf101"
+layers {
+  name: "data"
+  type: VIDEO_DATA
+  top: "data"
+  top: "label"
+  image_data_param {
+    #source: "./config/test_file"
+    source: "./config/list_file"
+    use_image: true
+#	mean_file: "./tools/C3D-master/examples/c3d_finetuning/train01_16_128_171_mean.binaryproto"
+    batch_size: 128
+    show_data: 0
+    new_height: 224
+    new_width: 224
+    new_length: 2
+    shuffle: false
+  }
+}
+# ----------- 1st layer group ---------------
+layers {
+  name: "conv1a"
+  type: CONVOLUTION3D
+  bottom: "data"
+  top: "conv1a"
+  blobs_lr: 1
+  blobs_lr: 2
+  weight_decay: 1
+  weight_decay: 0
+  convolution_param {
+    num_output: 64
+    kernel_size: 3
+    kernel_depth: 1
+    pad: 1
+    temporal_pad: 0
+    stride: 1
+  }
+}
+layers {
+  name: "relu1a"
+  type: RELU
+  bottom: "conv1a"
+  top: "conv1a"
+}
+# ------------- 2nd layer group --------------
+layers {
+  name: "conv2a"
+  type: CONVOLUTION3D
+  bottom: "conv1a"
+  top: "conv2a"
+  blobs_lr: 1
+  blobs_lr: 2
+  weight_decay: 1
+  weight_decay: 0
+  convolution_param {
+    num_output: 1
+    kernel_size: 3
+    kernel_depth: 2
+    pad: 1
+    temporal_pad: 0
+	stride: 1
+	temporal_stride: 2
+  }
+}
+layers {
+  name: "relu2a"
+  type: RELU
+  bottom: "conv2a"
+  top: "conv2a"
+}

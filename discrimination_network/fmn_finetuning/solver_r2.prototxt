@@ -1,0 +1,20 @@
+net: "./script/fmn_finetuning/train_resnet18_r2.prototxt"
+#test_iter: 1000
+#test_state: { stage: 'test-on-train' }
+test_iter: 306
+test_state: { stage: 'test-on-val' }
+test_interval: 500
+base_lr: 0.0003
+momentum: 0.9
+weight_decay: 0.00005
+lr_policy: "step"
+gamma: 0.1
+stepsize: 10000
+# Display every 20 iterations
+display: 40
+# The maximum number of iterations
+max_iter: 300000
+# snapshot intermediate results
+snapshot: 500
+snapshot_prefix: "./amodel/train01_hmdb_r0_raw_dy_s"
+solver_mode: GPU

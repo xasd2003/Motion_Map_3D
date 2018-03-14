@@ -1,0 +1,1 @@
+GLOG_logtostderr=1 ./tools/C3D-v1.1/build/tools/caffe.bin test --model=./script/hmdb_finetuning/train_resnet18_r2.prototxt --weights=./amodel/train03_ucf_r10_raw_iter_30000.caffemodel --stage='test-on-val' --iterations=740 --gpu=0

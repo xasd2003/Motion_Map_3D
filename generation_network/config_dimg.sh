@@ -1,0 +1,2 @@
+python /home/mcislab/yuwennan/fmn/script/gen_dimg.py UCF101 /home/mcislab/yuwennan/fmn/data/UCF101_256_crop_224_sp_16/ ./data/list/classInd.txt 1 ./ans/ucf101_iter_35000_L8 128 16 ./data/list/testlist03.txt
+#python /home/mcislab/yuwennan/fmn/script/gen_dimg.py UCF101 /home/mcislab/yuwennan/fmn/data/UCF101_256_crop_224_sp_16/ ./data/list/classInd.txt 1 ./ans/ucf101_iter_35000_L8 128 16 ./data/list/trainlist03.txt
